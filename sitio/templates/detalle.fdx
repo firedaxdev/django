@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Blog - {{ entrada.titulo }}</title>
+</head>
+<body>
+	{% autoescape off %}
+
+
+	<h1>{{ entrada.titulo }}</h1>
+	<p>Modificado ultima vez: {{ dia }} de {{ mes }} del {{ year }} </p>
+	<p>Publicado en la categoria: <a href="../../categoria/{{entrada.categoria|lower}}">{{ entrada.categoria }}</a></p>
+	<p>{{ entrada.contenido }}</p>
+	{% endautoescape %}
+
+</body>
+</html>

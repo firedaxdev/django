@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Blog de Firedax</title>
+</head>
+<body>
+	<h1>Entradas</h1>
+	{% autoescape off %}
+
+	{% for entrada in entradas %}
+		<h2><a href="/entrada/{{entrada.slug}}">{{ entrada.titulo }}</a></h2>
+		<p><b>Creado en la categoria:</b> <a href="/categoria/{{ entrada.categoria|lower }}">{{ entrada.categoria }}</a> </p>
+		<p>{{ entrada.contenido }}</p>
+	{% endfor %}
+	<h1>Categorias</h1>
+	{% for categoria in categorias %}
+		<li><a href="/categoria/{{categoria.slug}}">{{ categoria }}</a></li>
+	{% endfor %}
+	{% endautoescape %}
+
+</body>
+</html>

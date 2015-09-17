@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  {% autoescape off %}
+
+  {% if entradas %}
+        <ul>
+        {% for entrada in entradas %}
+            <li><a href="/entrada/{{ entrada.slug }}/">{{ entrada.titulo }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay entradas.</p>
+    {% endif %}
+    {% endautoescape %}
+
+</body>
+</html>
